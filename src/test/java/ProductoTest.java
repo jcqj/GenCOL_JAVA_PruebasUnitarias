@@ -54,6 +54,19 @@ public class ProductoTest {
 
     }
 
+    //? NUEVA FUNCIONALIDAD
+    //! Validar que nombre de producto sea mayor a 3 caracteres.
+    @Test
+    void largoNombre()
+    {
+//        Producto productOne = new Producto("Pan" , 2000 , 5);
+        Exception exception = assertThrows(IllegalArgumentException.class , () ->
+        {
+            Producto productOne = new Producto("Pan" , 2000 , 5);
+        });
+        assertEquals("El nombre no puede ser inferior a 3 caracteres" , exception.getMessage());
+    }
+
 
 
 

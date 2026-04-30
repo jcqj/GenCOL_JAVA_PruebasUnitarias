@@ -8,6 +8,7 @@ public class Producto {
         if (precio < 0) throw new IllegalArgumentException("El precio no puede ser negativo"
         );
         if (stock < 0) throw new IllegalArgumentException("El stock no puede ser negativo");
+        if ( nombre.length() < 4) throw new IllegalArgumentException("El nombre no puede ser inferior a 3 caracteres");
         this.nombre = nombre;
         this.precio = precio;
         this.stock  = stock;
